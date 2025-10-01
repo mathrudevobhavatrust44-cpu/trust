@@ -9,7 +9,6 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const navRef = useRef();
-  const [coursesOpen, setCoursesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,8 +43,8 @@ function Navbar() {
       <div className="navbar-backdrop" />
       <div className="navbar-container">
         <div className="logo-container" onClick={() => handleLinkClick('/')}>
-          <img src="/Images/logo.svg" alt="Logo" className="logo" />
-          <span className="brand">Charity Trust</span>
+          <img src="/Images/logo1.webp" alt="Logo" className="logo" />
+          <span className="brand">Matrudevobhava Trust</span>
         </div>
 
         <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
@@ -58,21 +57,17 @@ function Navbar() {
           <Link to="/donation" className={isActive('/donation') ? 'active' : ''} onClick={(e) => { e.preventDefault(); handleLinkClick('/donation'); }}>
             <span>Donation</span>
           </Link>
-
           <Link to="/gallery" className={isActive('/gallery') ? 'active' : ''} onClick={(e) => { e.preventDefault(); handleLinkClick('/gallery'); }}>
             <span>Gallery</span>
           </Link>
           <Link to="/contact" className={isActive('/contact') ? 'active' : ''} onClick={(e) => { e.preventDefault(); handleLinkClick('/contact'); }}>
             <span>Contact</span>
           </Link>
-          {/*<div className="mobile-cta">
-            <button className="join-button" onClick={() => handleLinkClick('/contact')}>Join With Us</button>
-          </div> */}
         </div>
 
         <div className="right-section">
           <div className="right-inner">
-            <button className="join-button desktop-only" onClick={() => handleLinkClick('/contact')}>Donate Now</button>
+            <button className="join-button desktop-only" onClick={() => handleLinkClick('/donation')}>Donate Now</button>
             <button
               className={`menu-icon ${menuOpen ? 'active' : ''}`}
               onClick={() => setMenuOpen(!menuOpen)}
